@@ -1,6 +1,6 @@
 def bubbleSort(x):
     y = len(x)
-    z = x[:]  # Make a copy of the input list
+    z = x[:]
     for a in range(y):
         for b in range(y - 1):
             if z[b] > z[b + 1]:
@@ -12,7 +12,7 @@ def bubbleSort(x):
 
 def selectionSort(m):
     n = len(m)
-    p = m[:]  # Make a copy of the input list
+    p = m[:]
     for q in range(n):
         minIdx = q
         for r in range(q + 1, n):
@@ -26,7 +26,7 @@ def selectionSort(m):
 
 def insertionSort(s):
     t = len(s)
-    u = s[:]  # Make a copy of the input list
+    u = s[:]
     for v in range(1, t):
         key = u[v]
         w = v - 1
