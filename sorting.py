@@ -1,38 +1,35 @@
-def bubbleSort(x):
-    y = len(x)
-    z = x[:]
-    for a in range(y):
-        for b in range(y - 1):
-            if z[b] > z[b + 1]:
-                # Swap
-                temp = z[b]
-                z[b] = z[b + 1]
-                z[b + 1] = temp
-    return z
+def bubble(nums):
+    length = len(nums)
+    newArr = nums[:]
+    for i in range(length):
+        for j in range(length - 1):
+            if newArr[j] > newArr[j + 1]:
+                temp = newArr[j]
+                newArr[j] = newArr[j + 1]
+                newArr[j + 1] = temp
+    return newArr
 
-def selectionSort(m):
-    n = len(m)
-    p = m[:]
-    for q in range(n):
-        minIdx = q
-        for r in range(q + 1, n):
-            if p[r] < p[minIdx]:
-                minIdx = r
-        # Swap
-        temp = p[q]
-        p[q] = p[minIdx]
-        p[minIdx] = temp
-    return p
+def selection(nums):
+    length = len(nums)
+    newArr = nums[:]
+    for i in range(length):
+        minIndex = i
+        for j in range(i + 1, length):
+            if newArr[j] < newArr[minIndex]:
+                minIndex = j
+        temp = newArr[i]
+        newArr[i] = newArr[minIndex]
+        newArr[minIndex] = temp
+    return newArr
 
-def insertionSort(s):
-    t = len(s)
-    u = s[:]
-    for v in range(1, t):
-        key = u[v]
-        w = v - 1
-        while w >= 0 and u[w] > key:
-            u[w + 1] = u[w]
-            w -= 1
-        u[w + 1] = key
-    return u
-
+def insertion(nums):
+    length = len(nums)
+    newArr = nums[:]
+    for i in range(1, length):
+        key = newArr[i]
+        j = i - 1
+        while j >= 0 and newArr[j] > key:
+            newArr[j + 1] = newArr[j]
+            j -= 1
+        newArr[j + 1] = key
+    return newArr
